@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { LineChart, Line } from 'recharts';
 
+import './App.css'
+let data=[{uv:1},{uv:2},{uv:3},{uv:2},{uv:-2},{uv:10},{uv:15},{uv:18}]
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <LineChart width={400} height={400} data={data}>
+          <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+        </LineChart>
       </div>
     );
   }
